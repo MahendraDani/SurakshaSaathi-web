@@ -1,6 +1,6 @@
 # SurakshaSaathi
 
-A platform know rescue agencies near you and the support they can provide!
+A platform to find rescue agencies near you and the support they can provide!
 
 # Getting Started
 
@@ -60,3 +60,19 @@ yarn dev
 ```
 
 Yay! The server is up and running at `http://localhost:3000`
+
+7. Go to the client directory and install the dependencies
+
+```
+yarn
+```
+
+8. Run the development server for client using the following command
+
+```
+yarn dev
+```
+
+9. Go to `http://localhost:5173` and you will be able to see the frontend of the project.
+
+Now you are good to go!
