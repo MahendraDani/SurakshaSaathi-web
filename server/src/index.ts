@@ -3,12 +3,12 @@ dotenv.config();
 import express from "express";
 import bodyParser from "body-parser";
 import router from "./routes/auth";
-// import dbConnect from "./config/database";
+import dbConnect from "./config/database";
 
 const app = express();
 const PORT = process.env.PORT;
 
-// dbConnect();
+dbConnect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

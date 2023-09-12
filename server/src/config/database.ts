@@ -1,8 +1,8 @@
-import exp from "constants";
 import mongoose from "mongoose";
 
 // Create a cluster on mongodb atlas first! and use the connection string here
-const DATABASE_URL: string = "http://127.0.0.1/surakshasaathi";
+const DATABASE_URL =
+  "mongodb+srv://mahendra:mahendra@cluster0.icsqugq.mongodb.net/surakshasaathi?retryWrites=true&w=majority";
 
 const dbConnect = async () => {
   try {

@@ -1,8 +1,19 @@
 import { Request, Response } from "express";
+import Agency from "../models/Agency";
 
-const registerAgency = (req: Request, res: Response) => {
-  // const { name: string, age: number } = req.body;
-  res.send("Agencires register from here");
+const registerAgency = async (req: Request, res: Response) => {
+  try {
+    const { name, age } = req.body;
+    const agency = new Agency({
+      name,
+      age,
+    });
+
+    await agency.save();
+    res.status(200).json(agency);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default registerAgency;
