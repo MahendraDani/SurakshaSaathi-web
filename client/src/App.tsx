@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import NarendraModiImage from "./assets/narendra_modi.jpg";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+      <div className="w-[70%] mx-auto text-center mb-32 flex justify-between items-center border-b-2">
+        <h1 className="font-bold text-slate-800 text-4xl p-4">
+          SurakshaSaathi
+        </h1>
+        <a
+          href="https://github.com/MahendraDani/SurakshaSaathi-web"
+          target="blank"
+          className="border-2 px-4 py-1 rounded-md border-slate-700 text-slate-700 hover:bg-slate-700 hover:text-slate-100 duration-200 ease-in cursor-pointer"
+        >
+          Github
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="w-[60%] mx-auto flex justify-between items-center gap-12">
+        <img
+          src={NarendraModiImage}
+          className="w-64 h-64 rounded-lg border-2 border-slate-200"
+        />
+        <div>
+          <h2 className="text-slate-700 text-3xl font-bold text-center">
+            Platform to findrescue agencies near you and the support they can
+            provide!
+          </h2>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="fixed bottom-0 w-full h-24 border-2 border-slate-200">
+        <div className="w-[45%] h-24 mx-auto flex justify-between items-center">
+          <h3 className="text-slate-800 font-semibold text-xl mb-1">
+            SurakshaSaathi
+          </h3>
+          <a
+            href="https://github.com/MahendraDani/SurakshaSaathi-web"
+            target="blank"
+            className="text-slate-700 hover:text-black duration-200 ease-in cursor-pointer"
+          >
+            Github
+          </a>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
