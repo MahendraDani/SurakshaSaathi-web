@@ -53,4 +53,48 @@ const signupAgency = async (req: Request, res: Response) => {
   }
 };
 
-export default signupAgency;
+const loginAgency = async (req: Request, res: Response) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res
+        .status(statusCodes.BAD_REQUEST)
+        .json({ message: "All fields are required!" });
+    }
+
+    const existingUser = await Agency.findOne({ email });
+    if (!existingUser) {
+      return res
+        .status(statusCodes.FORBIDDEN)
+        .json({ message: "User is not signed up!" });
+    }
+
+    const isPasswordMatch = bcyrpt.compare(
+      password,
+      existingUser.password || ""
+    );
+
+    if (!isPasswordMatch) {
+      return res
+        .status(statusCodes.UNAUTHORIZED)
+        .json({ message: "Incorrect or invaild credentials" });
+    }
+
+    const token = jwt.sign(
+      {
+        name: existingUser.name,
+        email: existingUser.email,
+      },
+      process.env.JWT_SECRET || "",
+      {
+        expiresIn: "3h",
+      }
+    );
+    return res
+      .status(200)
+      .json({ message: "User signed in successfully", accessToken: token });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export { signupAgency, loginAgency };

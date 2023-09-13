@@ -23,6 +23,7 @@ app.get("/", validateUser_1.default, (req, res) => {
     res.send("If you are seeing this message, it means you are logged into our website!");
 });
 app.use("/api/agencies", auth_1.default);
+app.use("/api/agencies", auth_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });
