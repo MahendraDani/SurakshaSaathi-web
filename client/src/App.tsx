@@ -21,7 +21,7 @@ function App() {
         />
         <div>
           <h2 className="text-slate-700 text-3xl font-bold text-center">
-            Platform to findrescue agencies near you and the support they can
+            Platform to find rescue agencies near you and the support they can
             provide!
           </h2>
         </div>

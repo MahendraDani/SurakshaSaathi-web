@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
 
-import registerAgency from "../controllers/auth";
+import signupAgency from "../controllers/auth";
 
-router.post("/", registerAgency);
+router.post("/signup", signupAgency);
 
 export default router;

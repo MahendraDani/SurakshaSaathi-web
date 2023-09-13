@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
 const agencySchema = new mongoose.Schema({
+  id: { type: String },
   name: { type: String },
-  age: { type: Number },
+  email: { type: String },
+  password: { type: String },
+  createdOn: { type: String },
+  createdAt: { type: [String] },
 });
 
 const Agency = mongoose.model("Agency", agencySchema);

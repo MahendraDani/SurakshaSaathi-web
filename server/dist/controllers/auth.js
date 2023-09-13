@@ -13,18 +13,46 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Agency_1 = __importDefault(require("../models/Agency"));
-const registerAgency = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const statuscodes_1 = __importDefault(require("../globals/statuscodes"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
+const uuid_1 = require("uuid");
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const date_1 = __importDefault(require("../utils/date"));
+const time_1 = __importDefault(require("../utils/time"));
+const signupAgency = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { name, age } = req.body;
+        const { name, email, password } = req.body;
+        if (!name || !email || !password) {
+            return res
+                .status(statuscodes_1.default.BAD_REQUEST)
+                .json({ message: "All fields are required" });
+        }
+        const existingUser = yield Agency_1.default.findOne({ email });
+        if (existingUser) {
+            return res
+                .status(statuscodes_1.default.CONFLICT)
+                .json({ message: "Agency already exists with the given email" });
+        }
+        const hashedPassword = yield bcryptjs_1.default.hash(password, 10);
         const agency = new Agency_1.default({
-            name,
-            age,
+            id: (0, uuid_1.v4)(),
+            name: name,
+            email: email,
+            password: hashedPassword,
+            createdOn: date_1.default,
+            createdAt: (0, time_1.default)(),
         });
         yield agency.save();
-        res.status(200).json(agency);
+        const token = jsonwebtoken_1.default.sign({
+            name: name,
+            email: email,
+        }, process.env.JWT_SECRET || "", {
+            expiresIn: "3h",
+        });
+        return res.status(statuscodes_1.default.CREATED).json({ agency, accessToken: token });
     }
     catch (error) {
         console.log(error);
     }
 });
-exports.default = registerAgency;
+exports.default = signupAgency;

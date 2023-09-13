@@ -10,16 +10,19 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const database_1 = __importDefault(require("./config/database"));
+const validateUser_1 = __importDefault(require("./middlewares/validateUser"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT;
 (0, database_1.default)();
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ["http://localhost:5173"],
+}));
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.get("/", (req, res) => {
-    res.send("Hello from server made using typescript is this real yes this is heck real ");
+app.get("/", validateUser_1.default, (req, res) => {
+    res.send("If you are seeing this message, it means you are logged into our website!");
 });
-app.use("/register", auth_1.default);
+app.use("/api/agencies", auth_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });

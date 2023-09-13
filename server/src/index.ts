@@ -6,6 +6,7 @@ import cors from "cors";
 
 import registerRoute from "./routes/auth";
 import dbConnect from "./config/database";
+import validateUser from "./middlewares/validateUser";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,16 +17,17 @@ app.use(
     origin: ["http://localhost:5173"],
   })
 );
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/", validateUser, (req, res) => {
   res.send(
-    "Hello from server made using typescript is this real yes this is heck real "
+    "If you are seeing this message, it means you are logged into our website!"
   );
 });
 
-app.use("/register", registerRoute);
+app.use("/api/agencies", registerRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at PORT: ${PORT}`);
