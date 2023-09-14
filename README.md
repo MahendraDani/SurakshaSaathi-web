@@ -47,7 +47,9 @@ cd server
 yarn
 ```
 
-6. Then start the server by running the following in two different terminals simultaneously.
+6. Create a .env file and initialize environment variables as given in .env.example file
+
+7. Then start the server by running the following in two different terminals simultaneously.
 
 ```
 yarn watch
@@ -61,13 +63,13 @@ yarn dev
 
 Yay! The server is up and running at `http://localhost:3000`
 
-7. Go to the client directory and install the dependencies
+9. Go to the client directory and install the dependencies
 
 ```
 yarn
 ```
 
-8. Run the development server for client using the following command
+10. Run the development server for client using the following command
 
 ```
 yarn dev

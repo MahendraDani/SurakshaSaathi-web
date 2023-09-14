@@ -30,7 +30,7 @@ app.get("/", validateUser, (req, res) => {
 
 app.use("/api/agencies", registerRoute);
 app.use("/api/agencies", registerRoute);
-app.use("/api/agencies", registerAgencyDetailsRoute);
+app.use("/api/agencies", validateUser, registerAgencyDetailsRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at PORT: ${PORT}`);
