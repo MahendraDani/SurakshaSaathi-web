@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 import registerRoute from "./routes/auth";
+import registerAgencyDetailsRoute from "./routes/details";
 import dbConnect from "./config/database";
 import validateUser from "./middlewares/validateUser";
 
@@ -29,6 +30,7 @@ app.get("/", validateUser, (req, res) => {
 
 app.use("/api/agencies", registerRoute);
 app.use("/api/agencies", registerRoute);
+app.use("/api/agencies", registerAgencyDetailsRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at PORT: ${PORT}`);

@@ -9,6 +9,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const auth_1 = __importDefault(require("./routes/auth"));
+const details_1 = __importDefault(require("./routes/details"));
 const database_1 = __importDefault(require("./config/database"));
 const validateUser_1 = __importDefault(require("./middlewares/validateUser"));
 const app = (0, express_1.default)();
@@ -24,6 +25,7 @@ app.get("/", validateUser_1.default, (req, res) => {
 });
 app.use("/api/agencies", auth_1.default);
 app.use("/api/agencies", auth_1.default);
+app.use("/api/agencies", details_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });
