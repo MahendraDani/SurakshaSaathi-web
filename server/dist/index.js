@@ -12,6 +12,7 @@ const auth_1 = __importDefault(require("./routes/auth"));
 const details_1 = __importDefault(require("./routes/details"));
 const getAllAgencyDetails_1 = __importDefault(require("./routes/getAllAgencyDetails"));
 const getAgencyDetails_1 = __importDefault(require("./routes/getAgencyDetails"));
+const secure_1 = __importDefault(require("./routes/secure"));
 const database_1 = __importDefault(require("./config/database"));
 const validateUser_1 = __importDefault(require("./middlewares/validateUser"));
 const app = (0, express_1.default)();
@@ -30,8 +31,9 @@ app.use("/api/agencies", getAllAgencyDetails_1.default);
 //@public
 app.use("/api/agencies", auth_1.default);
 app.use("/api/agencies", auth_1.default);
-app.use("/api/agencies", validateUser_1.default, details_1.default);
+app.use("/api/agency", validateUser_1.default, secure_1.default);
 app.use("/api/agency", validateUser_1.default, getAgencyDetails_1.default);
+app.use("/api/agencies", validateUser_1.default, details_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });

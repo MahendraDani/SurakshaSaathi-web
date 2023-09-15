@@ -7,6 +7,7 @@ const agencySchema = new mongoose.Schema({
   password: { type: String },
   createdOn: { type: String },
   createdAt: { type: [String] },
+  pin: { type: String },
 });
 
 const Agency = mongoose.model("Agency", agencySchema);

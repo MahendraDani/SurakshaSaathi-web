@@ -8,6 +8,7 @@ import registerRoute from "./routes/auth";
 import registerAgencyDetailsRoute from "./routes/details";
 import getAllAgencyDetailsRoute from "./routes/getAllAgencyDetails";
 import getAgencyDetailsRoute from "./routes/getAgencyDetails";
+import secureAgencyAccountRoute from "./routes/secure";
 
 import dbConnect from "./config/database";
 import validateUser from "./middlewares/validateUser";
@@ -34,8 +35,9 @@ app.use("/api/agencies", getAllAgencyDetailsRoute);
 //@public
 app.use("/api/agencies", registerRoute);
 app.use("/api/agencies", registerRoute);
-app.use("/api/agencies", validateUser, registerAgencyDetailsRoute);
+app.use("/api/agency", validateUser, secureAgencyAccountRoute);
 app.use("/api/agency", validateUser, getAgencyDetailsRoute);
+app.use("/api/agencies", validateUser, registerAgencyDetailsRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at PORT: ${PORT}`);
