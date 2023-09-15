@@ -11,6 +11,7 @@ const cors_1 = __importDefault(require("cors"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const details_1 = __importDefault(require("./routes/details"));
 const getAllAgencyDetails_1 = __importDefault(require("./routes/getAllAgencyDetails"));
+const getAgencyDetails_1 = __importDefault(require("./routes/getAgencyDetails"));
 const database_1 = __importDefault(require("./config/database"));
 const validateUser_1 = __importDefault(require("./middlewares/validateUser"));
 const app = (0, express_1.default)();
@@ -21,8 +22,8 @@ app.use((0, cors_1.default)({
 }));
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.get("/", validateUser_1.default, (req, res) => {
-    res.send("If you are seeing this message, it means you are logged into our website!");
+app.get("/", (req, res) => {
+    res.send("Home route!");
 });
 //@private
 app.use("/api/agencies", getAllAgencyDetails_1.default);
@@ -30,6 +31,7 @@ app.use("/api/agencies", getAllAgencyDetails_1.default);
 app.use("/api/agencies", auth_1.default);
 app.use("/api/agencies", auth_1.default);
 app.use("/api/agencies", validateUser_1.default, details_1.default);
+app.use("/api/agency", validateUser_1.default, getAgencyDetails_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });
