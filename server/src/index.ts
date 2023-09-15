@@ -6,6 +6,8 @@ import cors from "cors";
 
 import registerRoute from "./routes/auth";
 import registerAgencyDetailsRoute from "./routes/details";
+import getAllAgencyDetailsRoute from "./routes/getAllAgencyDetails";
+
 import dbConnect from "./config/database";
 import validateUser from "./middlewares/validateUser";
 
@@ -27,7 +29,10 @@ app.get("/", validateUser, (req, res) => {
     "If you are seeing this message, it means you are logged into our website!"
   );
 });
+//@private
+app.use("/api/agencies", getAllAgencyDetailsRoute);
 
+//@public
 app.use("/api/agencies", registerRoute);
 app.use("/api/agencies", registerRoute);
 app.use("/api/agencies", validateUser, registerAgencyDetailsRoute);

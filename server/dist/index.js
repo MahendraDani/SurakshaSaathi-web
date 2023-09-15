@@ -10,6 +10,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const details_1 = __importDefault(require("./routes/details"));
+const getAllAgencyDetails_1 = __importDefault(require("./routes/getAllAgencyDetails"));
 const database_1 = __importDefault(require("./config/database"));
 const validateUser_1 = __importDefault(require("./middlewares/validateUser"));
 const app = (0, express_1.default)();
@@ -23,9 +24,12 @@ app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.get("/", validateUser_1.default, (req, res) => {
     res.send("If you are seeing this message, it means you are logged into our website!");
 });
+//@private
+app.use("/api/agencies", getAllAgencyDetails_1.default);
+//@public
 app.use("/api/agencies", auth_1.default);
 app.use("/api/agencies", auth_1.default);
-app.use("/api/agencies", details_1.default);
+app.use("/api/agencies", validateUser_1.default, details_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at PORT: ${PORT}`);
 });
