@@ -260,7 +260,7 @@ const RegisterDetails = () => {
         </section>
         <section className="text-center">
           <button
-            className="border-2 border-sky-400 px-4 pb-1 rounded-sm text-sky-400 hover:bg-sky-400 duration-200 ease-in hover:text-white"
+            className="border-2 border-slate-500 px-4 pb-1 rounded-sm text-slate-500 hover:bg-slate-500 duration-200 ease-in hover:text-white"
             onClick={handleRegistrationDetails}
           >
             Submit
