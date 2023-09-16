@@ -23,6 +23,7 @@ const LoginForm = () => {
           password: password,
         }
       );
+
       const key = response.status;
       switch (key) {
         case statusCodes.SUCCESS:

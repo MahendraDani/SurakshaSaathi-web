@@ -26,10 +26,12 @@ const SignupForm = () => {
         }
       );
       const AgencyId = response.data.agency.id;
+      const agencyName = response.data.agency.name;
       const accessToken = response.data.accessToken;
       localStorage.setItem("token", accessToken);
       localStorage.setItem("id", AgencyId);
-      navigate("/home");
+      localStorage.setItem("name", agencyName);
+      navigate("/register/details");
       return;
     } catch (error) {
       console.log(error);
