@@ -16,7 +16,7 @@ const NavbarLogin = () => {
     <div
       className={`px-8 text-center ${
         currentPathname === "/" ? "mb-16" : ""
-      } md:mb-32 flex justify-between items-center border-b-2`}
+      } flex justify-between items-center border-b-2`}
     >
       <Link to={"/"}>
         <h1 className="font-bold text-slate-800 text-4xl p-4">

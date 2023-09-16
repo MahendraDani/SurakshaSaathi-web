@@ -60,14 +60,14 @@ const LoginForm = () => {
         <form className="border-2 border-slate-100 rounded-sm p-8 px-16 flex flex-col justify-center items-center gap-6 text-lg shadow-sm text-slate-500">
           <div className="w-full flex justify-center items-center mb-4">
             <h1 className="text-3xl font-semibold text-slate-600">
-              Login for <span className="text-purple-500">Agencies</span>
+              Login for <span className="text-sky-400">Agencies</span>
             </h1>
           </div>
           <div className="flex flex-col justify-between items-start gap-1">
             <label>Email address</label>
             <input
               type="text"
-              className="border-2 border-slate-100 focus:outline-none focus:border-purple-400 px-1 placeholder:text-[1rem]  placeholder:text-slate-300"
+              className="border-2 border-slate-100 focus:outline-none focus:border-sky-400 p-1 placeholder:text-[1rem]  placeholder:text-slate-300"
               placeholder="Name@example.com"
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -78,7 +78,7 @@ const LoginForm = () => {
             <label>Password</label>
             <input
               type="password"
-              className="border-2 border-slate-100 focus:outline-none focus:border-purple-400 px-1 placeholder:text-[1rem]  placeholder:text-slate-300"
+              className="border-2 border-slate-100 focus:outline-none focus:border-sky-400 p-1 placeholder:text-[1rem]  placeholder:text-slate-300"
               placeholder="*******"
               onChange={(e) => {
                 setPassword(e.target.value);

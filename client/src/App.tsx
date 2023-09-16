@@ -4,6 +4,7 @@ import Signup from "./pages/agencies/Signup";
 import TempHome from "./pages/TempHome";
 import Login from "./pages/agencies/Login";
 import RegisterDetails from "./pages/agencies/RegisterDetails";
+import Secure from "./pages/agencies/Secure";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register/details" element={<RegisterDetails />} />
+          <Route path="/secure" element={<Secure />} />
           <Route path="/home" element={<TempHome />} />
         </Routes>
       </BrowserRouter>
