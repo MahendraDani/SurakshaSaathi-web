@@ -1,30 +1,7 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   const currentPathname = location.pathname;
-
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  const [agencyName, setAgencyName] = useState<string>("");
-
-  const handleLoggedInStatus = () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      setIsUserLoggedIn(false);
-      return;
-    }
-
-    const agencyName = localStorage.getItem("name");
-    setIsUserLoggedIn(true);
-    if (agencyName !== null) {
-      setAgencyName(agencyName);
-    }
-  };
-
-  useEffect(() => {
-    handleLoggedInStatus();
-  });
-
   return (
     <div
       className={`px-8 text-center ${
@@ -36,28 +13,24 @@ const Navbar = () => {
           SurakshaSaathi
         </h1>
       </Link>
-      {isUserLoggedIn ? (
-        <div>{agencyName}</div>
-      ) : (
-        <div className="flex justify-between items-center gap-4">
-          <Link
-            to="/login"
-            className={`${
-              currentPathname === "/login" ? "hidden" : ""
-            } border-2 min-w-[4rem] px-4 pb-1 rounded-sm border-slate-600 text-slate-600 hover:bg-slate-600 hover:text-slate-100 duration-200 ease-in cursor-pointer`}
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className={`${
-              currentPathname === "/signup" ? "hidden" : ""
-            } border-2 min-w-[4rem] px-4 pb-1 rounded-sm border-slate-600 bg-slate-600  text-slate-100 hover:bg-transparent hover:text-slate-600 duration-200 ease-in cursor-pointer`}
-          >
-            Signup
-          </Link>
-        </div>
-      )}
+      <div className="flex justify-between items-center gap-4">
+        <Link
+          to="/login"
+          className={`${
+            currentPathname === "/login" ? "hidden" : ""
+          } border-2 min-w-[4rem] px-4 pb-1 rounded-sm border-slate-600 text-slate-600 hover:bg-slate-600 hover:text-slate-100 duration-200 ease-in cursor-pointer`}
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className={`${
+            currentPathname === "/signup" ? "hidden" : ""
+          } border-2 min-w-[4rem] px-4 pb-1 rounded-sm border-slate-600 bg-slate-600  text-slate-100 hover:bg-transparent hover:text-slate-600 duration-200 ease-in cursor-pointer`}
+        >
+          Signup
+        </Link>
+      </div>
     </div>
   );
 };

@@ -23,6 +23,7 @@ const LoginForm = () => {
           password: password,
         }
       );
+      console.log(response);
 
       const key = response.status;
       switch (key) {
@@ -31,7 +32,11 @@ const LoginForm = () => {
           console.log(response);
           if (!isTokenPresent) {
             const token = response.data.accessToken;
+            const agencyName = response.data.user.name;
+            const agencyId = response.data.user.id;
             localStorage.setItem("token", token);
+            localStorage.setItem("name", agencyName);
+            localStorage.setItem("id", agencyId);
             navigate("/home");
             return;
           }

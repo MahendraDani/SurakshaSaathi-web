@@ -92,7 +92,11 @@ const loginAgency = async (req: Request, res: Response) => {
     );
     return res
       .status(200)
-      .json({ message: "User signed in successfully", accessToken: token });
+      .json({
+        message: "User signed in successfully",
+        accessToken: token,
+        user: existingUser,
+      });
   } catch (error) {
     console.log(error);
   }
