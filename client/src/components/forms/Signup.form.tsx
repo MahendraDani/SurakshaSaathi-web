@@ -31,7 +31,7 @@ const SignupForm = () => {
       localStorage.setItem("token", accessToken);
       localStorage.setItem("id", AgencyId);
       localStorage.setItem("name", agencyName);
-      navigate("/register/details");
+      navigate("/home");
       return;
     } catch (error) {
       console.log(error);
@@ -40,9 +40,11 @@ const SignupForm = () => {
   return (
     <>
       <section className="w-full h-[calc(100vh-6rem)] sm:h-auto grid place-content-center">
-        <form className="border-2 border-slate-100 rounded-sm p-8 px-16 flex flex-col justify-evenly items-start gap-4 text-lg shadow-sm text-slate-500">
+        <form className="border-2 border-slate-100 rounded-sm p-8 px-6 flex flex-col justify-center items-center gap-4 text-lg shadow-sm text-slate-500">
           <div className="w-full flex justify-center items-center mb-4">
-            <h1 className="text-3xl font-semibold text-slate-600">REGISTER</h1>
+            <h1 className="text-center text-3xl font-semibold text-slate-600">
+              Registration for <span className="text-purple-500">Agencies</span>
+            </h1>
           </div>
           <div className="flex flex-col justify-between items-start gap-1">
             <label>Name of the Agency</label>

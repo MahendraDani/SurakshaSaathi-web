@@ -1,11 +1,15 @@
 import NavbarLogin from "../components/NavbarLogin";
-
 const TempHome = () => {
   return (
-    <div className="w-full h-screen flex justify-center items-center gap-4 flex-col">
+    <>
       <NavbarLogin />
-      <h1 className="text-5xl">Welcome to our website!</h1>
-    </div>
+      <div className="w-full h-[30rem] sm:h-[22rem] grid place-content-center">
+        <h1 className="text-3xl px-4 text-center font-bold ">
+          Welcome to the Agency Dashboard!
+        </h1>
+        <h3 className="text-center">Development in progress </h3>
+      </div>
+    </>
   );
 };
 
