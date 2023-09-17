@@ -2,8 +2,7 @@
 
 A platform to find rescue agencies near you and the support they can provide!
 
-Working demo - 17.09.2023
-https://github.com/MahendraDani/SurakshaSaathi-web/assets/116940083/000b0b16-98fb-4c51-b82f-64e6cecf3e56
+[Working demo - 17/09/2023](https://github.com/MahendraDani/SurakshaSaathi-web/assets/116940083/000b0b16-98fb-4c51-b82f-64e6cecf3e56)
 
 
 # Getting Started
