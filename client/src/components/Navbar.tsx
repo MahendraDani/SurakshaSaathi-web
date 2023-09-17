@@ -30,6 +30,14 @@ const Navbar = () => {
         >
           Signup
         </Link>
+        <Link
+          to="/chat"
+          className={`${
+            currentPathname === "/signup" || "/login" ? "hidden" : ""
+          } border-2 min-w-[4rem] px-4 pb-1 rounded-sm border-slate-600 bg-slate-600  text-slate-100 hover:bg-transparent hover:text-slate-600 duration-200 ease-in cursor-pointer`}
+        >
+          Chat
+        </Link>
       </div>
     </div>
   );

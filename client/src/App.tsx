@@ -5,6 +5,7 @@ import TempHome from "./pages/TempHome";
 import Login from "./pages/agencies/Login";
 import RegisterDetails from "./pages/agencies/RegisterDetails";
 import Secure from "./pages/agencies/Secure";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/register/details" element={<RegisterDetails />} />
           <Route path="/secure" element={<Secure />} />
           <Route path="/home" element={<TempHome />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>
     </div>
