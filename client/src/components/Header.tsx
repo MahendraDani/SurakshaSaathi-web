@@ -11,7 +11,7 @@ const Header = () => {
           <img
             src={SIH23_logo}
             alt="sih logo"
-            className="w-12 md:w-28 md:h-24"
+            className="w-12 md:w-24 md:h-20"
           />
           <img
             src={moe_logo}
@@ -23,7 +23,7 @@ const Header = () => {
           <img
             src={adazi_logo}
             alt="75 years of independence"
-            className="w-20 md:w-28 md:h-16"
+            className="w-20 md:w-32 md:h-20"
           />
         </div>
         <div>
