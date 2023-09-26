@@ -3,12 +3,14 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import indiaMap from "../../public/images/india.png";
 import { AiFillGithub } from "react-icons/ai";
+import Weather from "../components/Weather/Weather";
 
 const Home: React.FC = () => {
   return (
     <>
       <Navbar />
       <Header />
+      <Weather />
       {/* <div className="py-12 w-full grid place-content-center">
         <img src={indiaMap} alt="Indian map" />
       </div> */}
