@@ -9,10 +9,10 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <Header />
-      <div className="py-12 w-full grid place-content-center">
+      {/* <div className="py-12 w-full grid place-content-center">
         <img src={indiaMap} alt="Indian map" />
-      </div>
-      <div className="w-full h-24 border-2 border-slate-200">
+      </div> */}
+      {/* <div className="w-full h-24 border-2 border-slate-200">
         <div className="w-[45%] h-24 mx-auto flex justify-between items-center">
           <h3 className="text-slate-800 font-semibold text-xl mb-1">
             SurakshaSaathi
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
             <p>Github</p>
           </a>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
