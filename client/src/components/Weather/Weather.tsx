@@ -46,7 +46,7 @@ const Weather = () => {
     handleWeatherAPI();
   }, []);
   return (
-    <div className="min-w-[20rem] max-w-[30rem] border-2 flex flex-col justify-between items-start">
+    <div className="my-16 mx-auto min-w-[20rem] max-w-[30rem] border-2 flex flex-col justify-between items-start">
       <div className="w-full bg-[#3848E0] text-white p-4">
         <h2 className="text-2xl font-semibold">Weather Condition</h2>
       </div>

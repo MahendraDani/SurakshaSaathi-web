@@ -12,10 +12,10 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <Header />
+      <Weather />
       <About />
       <RegisteredAgencies />
-      {/* <Weather /> */}
-      {/* <Footer /> */}
+      <Footer />
       {/* <div className="py-12 w-full grid place-content-center">
         <img src={indiaMap} alt="Indian map" />
       </div> */}
