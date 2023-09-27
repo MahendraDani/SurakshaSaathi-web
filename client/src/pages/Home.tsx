@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Weather from "../components/Weather/Weather";
 import Footer from "../components/Footer";
 import About from "../components/About/About";
+import RegisteredAgencies from "../components/Registered-Agencies/RegisteredAgencies";
 
 const Home: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
       <Navbar />
       <Header />
       <About />
+      <RegisteredAgencies />
       {/* <Weather /> */}
       {/* <Footer /> */}
       {/* <div className="py-12 w-full grid place-content-center">
