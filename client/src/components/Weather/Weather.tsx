@@ -1,19 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Weather = () => {
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
   const [feelsLike_c, setFeelsLike_c] = useState(0);
   const [feelsLike_f, setFeelsLike_f] = useState(0);
   const [humidity, setHumidity] = useState(0);
   const [iconUrl, setIconUrl] = useState("");
-  const [lastUpdated, setLastUpdated] = useState("");
   const [lastUpdatedDate, setLastUpdatedDate] = useState("");
   const [lastUpdatedTime, setLastUpdatedTime] = useState("");
   const [temp_c, setTemp_c] = useState(0);
-  const [temp_f, setTemp_f] = useState(0);
+  // const [temp_f, setTemp_f] = useState(0);
   const [windSpeed, setWindSpeed] = useState(0);
 
   const handleWeatherAPI = async () => {
@@ -34,7 +33,7 @@ const Weather = () => {
         setLastUpdatedDate(date);
         setLastUpdatedTime(time);
         setTemp_c(response.data.current.temp_c);
-        setTemp_f(response.data.current.temp_f);
+        // setTemp_f(response.data.current.temp_f);
         setIconUrl(`https:${response.data.current.condition.icon}`);
         setWindSpeed(response.data.current.wind_kph);
       }
@@ -70,7 +69,7 @@ const Weather = () => {
           <h3>Feels Like : {feelsLike_c}°C </h3>
           <h3>Feels Like : {feelsLike_f}°F </h3>
           <h3>Humidity : {humidity}%</h3>
-          <h3>Wind : {humidity}%</h3>
+          <h3>Wind : {windSpeed}%</h3>
           <div className="text-sm flex gap-2">
             <h3>Last updated : </h3>
             <h3>{lastUpdatedDate}</h3>
@@ -78,7 +77,6 @@ const Weather = () => {
           </div>
         </div>
       </div>
-      <div>Hourly Forecast Region</div>
     </div>
   );
 };
