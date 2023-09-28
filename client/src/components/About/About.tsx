@@ -22,7 +22,7 @@ const About = () => {
         "We've developed an innovative platform that bridges the gap between communities and response agencies. Suraksha Saathi offers real-time information, collaboration tools, and resources, transforming disaster response into a collective effort.",
     },
     {
-      title: "WHY ChOOSE US?",
+      title: "WHY CHOOSE US?",
       description:
         "Our commitment to excellence, user-friendly solutions, and unwavering dedication set us apart. We're not just a platform; we're your trusted partner in disaster readiness and recovery.",
     },
