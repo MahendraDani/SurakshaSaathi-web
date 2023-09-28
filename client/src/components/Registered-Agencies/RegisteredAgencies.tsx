@@ -45,7 +45,7 @@ const RegisteredAgencies = () => {
     },
   ];
   return (
-    <div className="w-full py-16">
+    <section className="w-full py-16" id="agencies">
       <CenterContianer>
         <h1 className="pb-16 text-3xl font-bold text-center">
           REGISTERED AGENCIES
@@ -62,7 +62,7 @@ const RegisteredAgencies = () => {
           })}
         </div>
       </CenterContianer>
-    </div>
+    </section>
   );
 };
 

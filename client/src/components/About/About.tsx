@@ -28,7 +28,7 @@ const About = () => {
     },
   ];
   return (
-    <div className="w-full bg-[#0F1B92] text-white p-4">
+    <section className="w-full bg-[#0F1B92] text-white p-4" id="about">
       <div className="p-4 py-8  lg:w-[80%] mx-auto space-y-4">
         <h1 className="text-3xl font-bold text-center pb-8">ABOUT US</h1>
         <div className="flex flex-wrap md:justify-between justify-center items-center gap-4">
@@ -42,7 +42,7 @@ const About = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

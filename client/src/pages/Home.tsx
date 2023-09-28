@@ -10,7 +10,7 @@ import Donate from "../components/Donations/Donate";
 
 const Home: React.FC = () => {
   return (
-    <>
+    <section id="home">
       <Navbar />
       <Header />
       <Weather />
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       {/* <div className="py-12 w-full grid place-content-center">
         <img src={indiaMap} alt="Indian map" />
       </div> */}
-    </>
+    </section>
   );
 };
 

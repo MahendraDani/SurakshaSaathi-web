@@ -15,15 +15,15 @@ const Navbar = () => {
     <div
       className={`p-2 px-6 text-center ${
         currentPathname === "/" ? "mb-4" : "md:mb-32"
-      }  flex justify-between items-center border-b-2`}
+      }  flex justify-between items-center border-b-2 bg-[#BED6FF] sticky top-0 right-0 left-0`}
     >
       <Link to={"/"}>
         <img src={surakshasaathi} className="w-40" alt="Surakshasaathi" />
       </Link>
       <div className="hidden lg:flex justify-between items-center gap-4 md:text-lg">
         <NavLinks href="#home" title="Home" />
-        <NavLinks href="#agencies" title="Agencies" />
         <NavLinks href="#about" title="About" />
+        <NavLinks href="#agencies" title="Agencies" />
         <NavLinks href="#dos_and_donts" title="Do's & Don't" />
         <NavLinks href="#donate" title="Donate" />
 
