@@ -6,6 +6,7 @@ import Weather from "../components/Weather/Weather";
 import Footer from "../components/Footer";
 import About from "../components/About/About";
 import RegisteredAgencies from "../components/Registered-Agencies/RegisteredAgencies";
+import Donate from "../components/Donations/Donate";
 
 const Home: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
       <Weather />
       <About />
       <RegisteredAgencies />
+      <Donate />
       <Footer />
       {/* <div className="py-12 w-full grid place-content-center">
         <img src={indiaMap} alt="Indian map" />
